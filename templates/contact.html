@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Feedback
+{% endblock %}
+
+{% block main %}
+    <div>
+        <ul>
+            <li class="left_bar"><a href="/">Play</a></li>
+            <li class="left_bar"><a href="/history">History</a></li>
+            <li class="left_bar"><a href="/about">About</a></li>
+            <li class="left_bar"><a href="/contact">Contact</a></li>
+        {% if session.user_id %}
+            <li class="right_bar"><a href="/logout">Log Out</a></li>
+        {% else %}
+            <li class="right_bar"><a href="/register">Register</a></li>
+            <li class="right_bar"><a href="/login">Login</a></li>
+        {% endif %}
+        </ul>
+    </div>
+    <div style="padding: 15px;">
+        <h1>Please leave your message here!</h1>
+    </div>
+    <div class="container">
+        <form action="/contact" method="POST" id="form_contact">
+            <div>
+                <label style="padding: 5px" for="fname">First name*</label>
+                <input class="fb_input" autofocus type="text" id="fname" name="firstname" placeholder="Your name..">
+            </div>
+            <div>
+                <label  style="padding: 5px" for="sname">Surname*</label>
+                <input class="fb_input" type="text" id="sname" name="surname" placeholder="Your surname..">
+            </div>
+            <div>
+                <label for="mailbox">Your mail*</label>
+                <input type="email" id="mailbox" name="mbox" placeholder="Enter your mailbox here..">
+            </div>
+            <div>
+                <label for="subject">Feedback:*</label>
+                <label><textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea></label>
+            </div>
+            <p id="output"></p>
+            <button id="type1" type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Main page
+{% endblock %}
+{% block script %}
+    <script>
+        let word_list = {{ word_list | tojson }};
+    </script>
+{% endblock %}
+
+{% block main %}
+    <div>
+        <ul>
+            <li class="left_bar"><a href="/">Play</a></li>
+            <li class="left_bar"><a href="/history">History</a></li>
+            <li class="left_bar"><a href="/about">About</a></li>
+            <li class="left_bar"><a href="/contact">Contact</a></li>
+        {% if session.user_id %}
+            <li class="right_bar"><a href="/logout">Log Out</a></li>
+        {% else %}
+            <li class="right_bar"><a href="/register">Register</a></li>
+            <li class="right_bar"><a href="/login">Login</a></li>
+        {% endif %}
+        </ul>
+    </div>
+    <div id="main-div">
+        <pre style="font-size: 15px" id="hangman_main">Wanna play game?</pre>
+        <form>
+            <input type="button" onclick="updateButton(hangman)" value="Start">
+        </form>
+        <div>
+            <p style="font-size: 22px" id="message_to_user"></p>
+            <p style="font-size: 22px" id="word_compl"></p>
+            <form id="alphabet"></form>
+        </div>
+    </div>
+
+{% endblock %}
