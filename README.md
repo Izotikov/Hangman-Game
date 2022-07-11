@@ -7,3 +7,5 @@ Second file - Styles.css, just make a little design to my code. I don't spent mu
 Third file - application.py, here contains all backend, that let this code to work properly. Most of this was written using "Finance" code as example, but adapt it to new project. index let you to start tne game, login, register, logout let you do, what they named, login, registration or logout. History rendering history.html, where code dynamically upload files from SQL database.
 After its word.txt, it's just contain all the words you can guess.
 And last one is html files, it's just webpages to play in my game.
+
+![image](https://user-images.githubusercontent.com/91781655/178341738-3a6e9c20-aed4-4d7d-a6fb-1392625bea31.png)
